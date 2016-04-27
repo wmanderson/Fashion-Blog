@@ -44,6 +44,7 @@ a:hover {
 .span-8 {
     width: 66.13%;
 }
+
 .span-7 {
     width: 57.66%;
 }
@@ -87,39 +88,77 @@ a:hover {
 
 /*Navigation Style*/
 
-.nav {
-    font-size: 18px;
-    font-family: "lato", sans-serif;
-    font-weight: 300;
-    background-color: #000;
-    text-align: left;
-    padding: 0px;
+.nav-main {
+    margin: 1em 0;
+    min-width: 900px;
+    position: relative;
 }
-.nav li {
+
+.nav-main ul {
+    font-family: "lato", sans-serif;
+    font-weight: 200;
+    background-color: #1B1B1B;
+    width: 100%;
+    padding: 0;
+    text-align: justify;
+    overflow: hidden;
+    content: '';
+    display: inline-block;
+    width: 100%;
+
+}
+
+.nav-main li {
+    border-right: #fff 1px solid;
     list-style: none;
     display: inline-block;
-    border-right: #fff 1px solid;
-    padding: 15px 15px;
 }
-.nav li:last-child {
-    border: none;
-}
-.nav li:first-child {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.nav a {
+
+.nav-main  a {
+    display: block;
     text-decoration: none;
-    list-style: none;
     color: #fff;
-    padding: 0px 0px;
+    padding: 1em 1em;
     margin: 0px 25px;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-.nav a:hover, .nav a:focus {
+.nav-main  a:hover, .nav a:focus {
     color: #D4D5D6;
+}
+
+.nav-mobile {
+    cursor: pointer;
+    position: absolute;
+    float: left;
+    right: 60px;
+    top: 80px;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 25px;
+    height: 2px;
+    background-color: #929394;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-3px, 3px) ;
+    transform: rotate(-45deg) translate(-3px, 3px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
 }
 
 /*Article Layout*/
@@ -220,4 +259,29 @@ a[class="cta"] {
 }
 .footer small {
     color: #929394;
+}
+
+@media (max-width: 900px) {
+  .span-8 {
+    min-width: 100%;
+  }
+  .span-4 {
+    min-width: 100%;
+  }
+  .nav-main {
+      display: none;
+      position: relative;
+  }
+  .subhead {
+      display: block;
+      padding-bottom: 25px;
+      margin-bottom: 10px;
+      border-bottom: 1px #929394 solid;
+  }
+}
+
+@media (min-width: 900px) {
+  .nav-mobile {
+    display: none;
+  }
 }
